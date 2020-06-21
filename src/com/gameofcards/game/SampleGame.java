@@ -35,6 +35,11 @@ public class SampleGame extends BasicGame {
         print("Input the number of players: ");
         Scanner sc = new Scanner(System.in);
         noOfPlayers = sc.nextInt();
+        if(noOfPlayers <= 1 || noOfPlayers > 52)
+        {
+            println("Invalid number of players.");
+            System.exit(0); // Exception handling must be done here.
+        }
         for(int i = 1; i <= noOfPlayers; ++i) {
             players.add(new SampleGamePlayer(i));
         }
